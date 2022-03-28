@@ -1,0 +1,169 @@
+<html>
+<head>
+<style>
+body
+{
+	text-align:center;
+	background-image: url("ww.jpeg");
+}
+
+.class1
+{
+  width:30%;
+  padding:5px 5px;
+  margin:4px 0;
+  box-sizing:border-box;
+  border-color:#99e7ff;
+  border-radius:3px;
+  background-color:FFBE33;
+}
+.class2
+{
+  width:10%;
+  background-color:5833FF;
+  color:white;
+  padding:10px 10px;
+  margin:4px 0;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+div.div1
+{
+  text-align:center;
+  color:208C2A;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="div1">
+<h2>SignUp</h2>
+</div>
+<form action="login.html" name="myform" onsubmit="return validate()" method="get">
+
+
+<div class="div2">
+<b>Your Name</b>:<br>
+<input type="text" name="name1" class="class1" placeholder="Name"><br><br>
+<b>Your Email</b>:<br>
+<input type="text" name="email1" class="class1" placeholder="Email"><br><br>
+<b>Gender</b>:<br>
+<input type="radio" name="g">Male<br>
+<input type="radio" name="g">Female<br>
+<input type="radio" name="g">Other<br><br>
+<b>Enter Phone Number</b>:<br>
+<input type="text" name="phonenumber1" class="class1" placeholder="Phone number"><br><br>
+<b>Enter Password</b>:<br>
+<input type="password" name="password1" class="class1" placeholder="Password"><br><br>
+<b>Enter Password again</b>:<br>
+<input type="password" name="password2" class="class1" placeholder="Password again"><br><br>
+<input type="submit" class="class2">
+<input type="reset" class="class2"><br>
+</div>
+
+</form>
+</body>
+
+<script>
+function validate()
+{
+var x=document.forms["myform"]["name1"];
+var y=document.forms["myform"]["email1"];
+var z=document.forms["myform"]["phonenumber1"];
+var u=document.forms["myform"]["password1"];
+var v=document.forms["myform"]["password2"];
+	
+	
+	if (x.value == "")
+	{
+        	alert("Please enter your name.");
+        	x.focus();
+        	return false;
+    	}
+
+if (!/^[a-zA-Z]*$/g.test(x.value))
+{
+alert("Name should contain characters only.");
+x.focus();
+return false;
+}
+
+	 if(y.value=="")
+	{
+	alert("Please enter Your Email.");
+	return false;
+	}
+
+	if(y.value.indexOf("@",0)<0)
+	{
+	alert("Please  enter valid email address.");
+	return false;
+	}
+
+	if(y.value.indexOf(".",0)<0)
+	{
+	alert("Please enter valid email address.");
+	return false;
+	}
+
+var g1=document.getElementsByName('g');
+var g2=false;
+
+        for(var i=0;i<g1.length;i++)
+	{
+            if(g1[i].checked==true)
+		{
+                		g2=true;    
+            		}
+        	}
+        if(!g2)
+	{
+            	alert("Please choose the gender.");
+            	return false;
+        	}
+	if(z.value=="")
+	{
+	alert("Please enter your phone number.");
+	return false;
+	}
+	
+var z1=document.myform.phonenumber1.value;
+if (isNaN(z1))
+{
+  alert("Enter correct phone number.");
+  return false;
+}
+var z2=document.myform.phonenumber1.value;
+if (z2.length!=10)
+{
+  alert("Enter correct phone number.");
+  return false;
+}
+
+	if(u.value.length<6)
+	{
+	alert("Password length should be more then six.");
+	return false;
+	}
+
+	if(v.value=="")
+	{
+	alert("Please enter your Password again.");
+	return false;
+	}
+var u1=document.myform.password1.value;
+var v1=document.myform.password2.value;
+if(u1!=v1)
+{
+alert("Please enter same password.");
+return false;
+}
+
+}
+</script>
+
+</html>

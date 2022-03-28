@@ -1,0 +1,88 @@
+<html.
+<head>
+<style>
+
+body {
+ background-image: url("ww.jpeg");
+ 
+}
+div.div1
+{
+  text-align:center;
+  color:208C2A;
+}
+div.div2
+{
+  text-align: center;
+}
+.class1
+{
+  width:30%;
+  padding:5px 2px;
+  margin:8px 0;
+  box-sizing:border-box;
+  border-color:#99e7ff;
+  border-radius:3px;
+  background-color:FFBE33;
+}
+.class2
+{
+  width:10%;
+  background-color:5833FF;
+  color:white;
+  padding:10px 10px;
+  margin:4px 0;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="div1">
+<h2>LogIn</h2>
+</div>
+
+<form action="html" name="myform" onsubmit="return validate()" method="get">
+
+<div class="div2">
+<b>Enter your Email<b><br>
+<input type="text" name="email1" class="class1" placeholder="Email"><br><br>
+<b>Enter your Password<b><br>
+<input type="text" name="password1" class="class1" placeholder="Password"><br><br>
+<input type="submit" class="class2">
+</div>
+</form>
+</body>
+<script>
+function validate()
+{
+var x=document.forms["myform"]["email1"];
+var y=document.forms["myform"]["password1"];
+
+	if(x.value=="")
+	{
+	alert("Please enter Your Email.");
+	return false;
+	}
+
+	if(x.value.indexOf("@",0)<0)
+	{
+	alert("Please  enter valid email address.");
+	return false;
+	}
+
+	if(x.value.indexOf(".",0)<0)
+	{
+	alert("Please enter valid email address.");
+	return false;
+	}
+	if(y.value=="")
+	{
+	alert("Please enter Your Password.");
+	return false;
+	}
+}
+</script>
+</html>
